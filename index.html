@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+  </head>
+  <style>
+    /* .contain-slide {
+      margin-right: 5px;
+      max-width: 100px;
+      height: auto;
+      background-color: blue;
+    } */
+    /* .contain-slide > img {
+      border-radius: 50%;
+      height: 100%;
+      width: 100%;
+    } */
+    .swiper {
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      /* background: #fff; */
+      /* display: grid; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* 
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } */
+
+    .slide-1x6 {
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      border-radius: 5px;
+      background-color: whitesmoke;
+      width: 100%;
+      height: auto;
+    }
+    .img-slid-1x6 {
+      padding: 10px 0;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 5px;
+    }
+
+    .img-box-1x6 {
+      border-radius: 3px;
+      padding: 3px 3px;
+      background-color: whitesmoke;
+      height: 150px;
+      transition: 0.3s;
+    }
+    .img-box-1x6:hover {
+      background-color: white;
+      transform: scale(1.03);
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    }
+    .img-box-1x6 > a > img {
+      border-radius: 50%;
+      width: 100%;
+      height: 80%;
+    }
+    .txt-1x6 {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div class="container-fluid shadow-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12">
+            <div class="menu-bar col-xl-12 col-lg-12 col-md-12">
+              <span class="logo">
+                <a href=""
+                  ><img class="img-logo" src="/Picturee/logo.png" alt=""
+                /></a>
+              </span>
+              <span class="search-bar">
+                <input class="input-ch" type="text" />
+                <span class="sm-search"
+                  ><a href=""><i class="fa-solid fa-magnifying-glass"></i></a
+                ></span>
+                <button class="btn-ch">Search</button>
+              </span>
+              <!-- Show When small Sreen -->
+              <ul class="show">
+                <li class="">
+                  <a href="">
+                    <span class="icon-bar"
+                      ><i class="fa-solid fa-user"></i
+                    ></span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="">
+                    <span class="icon-bar"
+                      ><i class="fa-solid fa-info"></i
+                    ></span>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="">
+                    <span class="icon-bar"
+                      ><i class="fa-solid fa-cart-shopping"></i
+                    ></span>
+                  </a>
+                </li>
+              </ul>
+              <span class="tog-gler"><i class="fa-solid fa-bars"></i></span>
+
+              <!-- End of hide when big screen -->
+              <ul class="contace">
+                <li class="contace-list">
+                  <a href="">
+                    <span class="icon-bar"
+                      ><i class="fa-solid fa-user"></i
+                    ></span>
+                    Account</a
+                  >
+                </li>
+
+                <li class="contace-list">
+                  <a href="">
+                    <span class="icon-bar"
+                      ><i class="fa-solid fa-question"></i></span
+                    >Help</a
+                  >
+                </li>
+                <li class="contace-list">
+                  <a href="">
+                    <span class="icon-bar"
+                      ><i class="fa-solid fa-cart-shopping"></i></span
+                    >Cart</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of nav bar -->
+
+    <!-- menu -->
+
+    <div class="container mt-3 index mb-3">
+      <div class="row container-height">
+        <div class="left col-xl-2 col-lg-2 col-md-2 col-sm-2 container-height">
+          <ul class="menu-list">
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+            <li class="list">
+              <a href="#"><i class="fa-solid fa-star"></i>New</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- slide -->
+        <div
+          class="center-slide container-height col-xl-7 col-lg-7 col-md-7 col-sm-12 p-0"
+        >
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://zz.jumia.is/cms/01_HP_Sliders/2023/DT_HP_SLIDER-2-230920.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://zz.jumia.is/cms/01_HP_Sliders/0108_DT_HP-Slider-712x384-.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://zz.jumia.is/cms/01_HP_Sliders/2023/DT_HP_SLIDER-2-230920.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="txt-animate">
+              <marquee behavior="" direction=""
+                >Get Your Green & Gold On | The South African Rugby
+                Colors</marquee
+              >
+            </div>
+          </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
+        <!-- End of slide -->
+
+        <!-- Right -->
+        <div
+          class="abs-right container-height col-xl-3 col-lg-3 col-md-3 col-sm-3"
+        >
+          <div class="abs-top">
+            <img
+              src="https://zz.jumia.is/cms/side-banner_218x184230727x.jpg"
+              alt=""
+            />
+          </div>
+          <div class="abs-bottom">
+            <img
+              src="https://zz.jumia.is/cms/side-banner_218x184-na230727x.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- slide 1x6 -->
+    <div class="container">
+      <div class="swiper mySwiper slide-1x6">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img-slid-1x6">
+              <div class="img-box-1x6">
+                <a href="">
+                  <img
+                    src="https://zz.jumia.is/cms/Home-page-content/Thumbnail_220x220.jpg"
+                    alt=""
+                /></a>
+                <p class="txt-1x6">Dreess</p>
+              </div>
+              <div class="img-box-1x6">
+                <a href="">
+                  <img src="https://zz.jumia.is/cms/TN-2230807.jpg" alt=""
+                /></a>
+                <p class="txt-1x6">Dreess</p>
+              </div>
+              <div class="img-box-1x6">
+                <a href="">
+                  <img
+                    src="https://zz.jumia.is/cms/03_Widgets_Generic/Thumbnails/Heels_220x220.jpg"
+                    alt=""
+                /></a>
+                <p class="txt-1x6">Dreess</p>
+              </div>
+              <div class="img-box-1x6">
+                <a href=""
+                  ><img
+                    src="https://zz.jumia.is/cms/03_Widgets_Generic/Thumbnails/6Sandals_220x220.jpg"
+                    alt=""
+                /></a>
+                <p class="txt-1x6">Dreess</p>
+              </div>
+              <div class="img-box-1x6">
+                <a href=""
+                  ><img
+                    src="https://zz.jumia.is/cms/03_Widgets_Generic/Thumbnails/9T-shirts_220x220.jpg"
+                    alt=""
+                /></a>
+                <p class="txt-1x6">Dreess</p>
+              </div>
+              <div class="img-box-1x6">
+                <a href="">
+                  <img
+                    src="https://zz.jumia.is/cms/03_Widgets_Generic/Thumbnails/7Sneakers_220x220.jpg"
+                    alt=""
+                /></a>
+                <p class="txt-1x6">Dreess</p>
+              </div>
+              <div class="img-box-1x6">
+                <a href=""
+                  ><img
+                    src="https://zz.jumia.is/cms/03_Widgets_Generic/Thumbnails/2Dresses_220x220.jpg"
+                    alt=""
+                /></a>
+                <p class="txt-1x6">Dreess</p>
+              </div>
+              <div class="img-box-1x6">
+                <a href="">
+                  <img
+                    src="https://zz.jumia.is/cms/Home-page-content/2109Thumbnail_220x220.jpg"
+                    alt=""
+                /></a>
+                <p class="txt-1x6">Dreess</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">Slide 2</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <!-- End of slide 1x6 -->
+
+    <!-- Grid templet  -->
+    <div class="container p-0 mt-3">
+      <div class="grid1x3">
+        <div class="cart">
+          <img src="/Picturee/women.jpg" alt="" />
+        </div>
+        <div class="cart">
+          <img
+            src="https://zz.jumia.is/cms/01_HP_Sliders/2023/DT-400x533-kids230824.jpg"
+            alt=""
+          />
+        </div>
+        <div class="cart">
+          <img
+            src="https://zz.jumia.is/cms/01_HP_Sliders/2023/DT-400x533-men230824.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- End of 1x3 -->
+
+    <!-- grid-1x6 -->
+    <div class="container p-0">
+      <div class="grid-1x6 m-3 contain-shadow">
+        <div class="box">
+          <a href="">
+            <img
+              src="https://zz.jumia.is/cms/01_HP_Sliders/2023/TN-HP-dresses-ss230824.jpg"
+              alt=""
+          /></a>
+          <p class="txt-box">Dreess</p>
+        </div>
+        <div class="box">
+          <a href=""
+            ><img
+              src="https://zz.jumia.is/cms/01_HP_Sliders/2023/TN-HP-sneakers230824.jpg"
+              alt=""
+          /></a>
+          <p class="txt-box">Sneaker</p>
+        </div>
+        <div class="box">
+          <a href="">
+            <img
+              src="https://zz.jumia.is/cms/01_HP_Sliders/2023/TN-HP-heels230824.jpg"
+              alt=""
+          /></a>
+          <p class="txt-box">Heels</p>
+        </div>
+        <div class="box">
+          <a href="">
+            <img
+              src="https://zz.jumia.is/cms/03_Widgets_Generic/Freelinks/Ankle-Boots-1-DT-300x400.jpg"
+              alt=""
+          /></a>
+          <p class="txt-box">Ankle Boots</p>
+        </div>
+        <div class="box">
+          <a href=""
+            ><img
+              src="https://zz.jumia.is/cms/01_HP_Sliders/2023/TN-HP-kids230824.jpg"
+              alt=""
+          /></a>
+          <p class="txt-box">Kids Clothing</p>
+        </div>
+        <div class="box">
+          <a href=""
+            ><img
+              src="https://zz.jumia.is/cms/03_Widgets_Generic/Freelinks/Bedding-2-DT-300x400.jpg"
+              alt=""
+          /></a>
+          <p class="txt-box">Bedding</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid 1x2 -->
+    <div class="container p-0 mt-3">
+      <div class="grid-1x2">
+        <div class="cart">
+          <img
+            src="https://zz.jumia.is/cms/01_HP_Sliders/2023/dt-600x300-sports230824.jpg"
+            alt=""
+          />
+        </div>
+        <div class="cart">
+          <img
+            src="https://zz.jumia.is/cms/01_HP_Sliders/2023/dt-600x300-home230824.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Gride 1x3 -->
+    <div class="container p-0 mt-3">
+      <div class="grid1x3">
+        <div class="cart">
+          <img src="/Picturee/women.jpg" alt="" />
+        </div>
+        <div class="cart">
+          <img src="/Picturee/women.jpg" alt="" />
+        </div>
+        <div class="cart">
+          <img
+            src="https://zz.jumia.is/cms/01_HP_Sliders/2023/DT-400x533-men230824.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- End of Gride 1x3 -->
+    <div class="container">
+      <div class="gride-1x6-adidas-deals">
+        <div class="box-deals">
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/70/0843/1.jpg?4062"
+            alt=""
+          />
+        </div>
+        <div class="box-deals">
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/90/9433/1.jpg?1272"
+            alt=""
+          />
+        </div>
+        <div class="box-deals">
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/31/0843/1.jpg?3917"
+            alt=""
+          />
+        </div>
+        <div class="box-deals">
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/21/1633/1.jpg?1108"
+            alt=""
+          />
+        </div>
+        <div class="box-deals">
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/9433/1.jpg?0891"
+            alt=""
+          />
+        </div>
+        <p
+          style="
+            margin-top: 10px;
+            position: absolute;
+            right: 10px;
+            color: rgba(32, 31, 31, 0.548);
+          "
+        >
+          SEE ALL &#10095;
+        </p>
+        <div class="box-deals">
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/69/1103/1.jpg?2244"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="cotain-image">
+          <img
+            src="https://zz.jumia.is/cms/01_HP_Sliders/2023/DT_SB_2-adi230905.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid-1x6 adidas Deals-->
+
+    <div class="container">
+      <div class="gride-1x6-adidas-deals">
+        <div class="box-deals">
+          <div class="discout">-50%</div>
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/70/0843/1.jpg?4062"
+            alt=""
+          />
+        </div>
+        <div class="box-deals">
+          <div class="discout">-45%</div>
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/90/9433/1.jpg?1272"
+            alt=""
+          />
+        </div>
+        <div class="box-deals">
+          <div class="discout">-48%</div>
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/31/0843/1.jpg?3917"
+            alt=""
+          />
+        </div>
+        <div class="box-deals">
+          <div class="discout">-50%</div>
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/21/1633/1.jpg?1108"
+            alt=""
+          />
+        </div>
+        <div class="box-deals">
+          <div class="discout">-45%</div>
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/01/9433/1.jpg?0891"
+            alt=""
+          />
+        </div>
+        <a
+          href="#"
+          style="
+            margin-top: 10px;
+            position: absolute;
+            right: 10px;
+            color: rgba(32, 31, 31, 0.548);
+            text-decoration: none;
+          "
+        >
+          SEE ALL &#10095;
+        </a>
+        <div class="box-deals">
+          <div class="discout">-39%</div>
+          <img
+            src="https://zz.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/69/1103/1.jpg?2244"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer-List -->
+
+    <div class="container mt-3">
+      <div class="contain-lits">
+        <p
+          style="
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: whitesmoke;
+            margin-bottom: 10px;
+          "
+        >
+          Indulge In Online Fashion Shopping With Zando!
+        </p>
+        <p style="margin-left: 15px; color: whitesmoke; font-size: 14px">
+          Searching for the latest fashion and lifestyle pieces for the whole
+          family? You’ve come to the right place! Whatever your style
+          personality, fill your carts with clothing, shoes, accessories,
+          homeware, beauty, sports and plus-size pieces from over 600 local and
+          international brands.
+        </p>
+        <p
+          style="
+            font-size: 14px;
+            color: whitesmoke;
+            margin-bottom: 15px;
+            margin-left: 15px;
+          "
+        >
+          Check-in daily to browse new arrivals, weekly deals and top brands
+          like Nike, adidas, Vans, Puma, Pick n Pay Clothing and Levi's for
+          women, men and kids.
+        </p>
+        <div class="row col-xl-12 col-md-12 col-sm-12">
+          <div class="footer-1 col-3">
+            <p style="font-size: 20px; font-weight: bold; margin-left: 20px">
+              TOP CATEGORIES
+            </p>
+            <ul class="list-footer-1">
+              <li><a href="#">Lingerie</a></li>
+              <li><a href="#">Lingerie</a></li>
+              <li><a href="#">Lingerie</a></li>
+            </ul>
+          </div>
+          <div class="footer-1 col-3">
+            <ul class="list-footer-1" style="margin-top: 32px">
+              <li><a href="#">Lingerie</a></li>
+              <li><a href="#">Lingerie</a></li>
+              <li><a href="#">Lingerie</a></li>
+            </ul>
+          </div>
+          <div class="footer-1 col-3">
+            <ul class="list-footer-1" style="margin-top: 32px">
+              <li><a href="#">Lingerie</a></li>
+              <li><a href="#">Lingerie</a></li>
+              <li><a href="#">Lingerie</a></li>
+            </ul>
+          </div>
+          <div class="footer-1 col-3">
+            <ul class="list-footer-1" style="margin-top: 32px">
+              <li><a href="#">Lingerie</a></li>
+              <li><a href="#">Lingerie</a></li>
+              <li><a href="#">Lingerie</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <div
+        class="container-fluid pt-5 mt-3"
+        style="background-color: rgb(25, 23, 23)"
+      >
+        <div class="container pb-5">
+          <div class="footer-1x3">
+            <div class="left-1x3"><img src="/Picturee/logo.png" alt="" /></div>
+            <div class="center-1x3">
+              <p class="txt-footer">NEW TO ZANDO?</p>
+              <p class="txt-footer">SIGN UP TO VIEW ALL OUR AMAZING DEALS</p>
+
+              <ul class="footer-input">
+                <li class="input"><input type="text" /></li>
+                <li class="submit"><input type="button" value="MALE" /></li>
+                <li class="submit"><input type="button" value="FEMALE" /></li>
+              </ul>
+            </div>
+            <div class="right-1x3">
+              <div class="img-footer-logo">
+                <img src="/Picturee/images copy.png" alt="" />
+              </div>
+              <div class="app">
+                <div class="play-stor">
+                  <a href="">
+                    <span class="PlayStor"
+                      ><i class="fa-brands fa-google-play"></i
+                    ></span>
+                    <p class="txt-play">
+                      Download on the <span class="txt-stor">Play Stor</span>
+                    </p>
+                  </a>
+                </div>
+                <div class="play-stor">
+                  <a href="">
+                    <span class="PlayStor"
+                      ><i class="fa-brands fa-app-store-ios"></i
+                    ></span>
+                    <p class="txt-play">
+                      Download on the <span class="txt-stor">App Stor</span>
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer 1x4 -->
+      <div class="container-fluid bg-dark">
+        <div class="container pt">
+          <div class="gride-1x4">
+            <div class="about">
+              <ul class="list-footer">
+                <li class="About-head">About</li>
+                <li><a href="">Chat with us</a></li>
+                <li><a href="">Who are we</a></li>
+                <li><a href="">Jumia Group</a></li>
+                <li><a href="">How to Shop</a></li>
+                <li><a href="">How to Shop</a></li>
+                <li><a href="">Sell on Zando</a></li>
+              </ul>
+            </div>
+
+            <div class="need-help">
+              <ul class="list-footer">
+                <li class="help-head">NEED HELP?</li>
+                <li><a href="">Help Center</a></li>
+                <li><a href="">Contact us</a></li>
+                <li class="help-head">USEFUL LINKS</li>
+                <li><a href="">Track your order</a></li>
+                <li><a href="">Shipping & Delivery</a></li>
+                <li><a href="">Return Policy</a></li>
+                <li><a href="">Terms & Conditions</a></li>
+                <li><a href="">Size Guides</a></li>
+                <li><a href="">PAIA and POPIA Manual</a></li>
+                <li><a href="">Privacy and Cookie Notice</a></li>
+                <li><a href="">Dispute Resolution</a></li>
+                <li><a href="">Promotions Terms & Conditions</a></li>
+              </ul>
+            </div>
+            <div class="discover">
+              <ul class="list-footer">
+                <li class="discover-head">DISCOVER</li>
+                <li><a href="">Online Shopping App</a></li>
+                <li><a href="">Huawei App Gallery</a></li>
+                <li><a href="">Zando Express</a></li>
+                <li><a href="">Dresses</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Black Friday 2023</a></li>
+              </ul>
+            </div>
+            <div class="profile">
+              <ul class="list-footer">
+                <li class="profile-head">MY PROFILE</li>
+                <li>
+                  <a href="">My Account</a
+                  ><a href="" class="m-3">Zando Credit</a>
+                </li>
+                <li>
+                  <a href="">Order history</a
+                  ><a href="" class="m-3">Wishlist</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- gride 1x2 conect and payment -->
+        <div class="container mt-2" style="margin-left: 75px">
+          <div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="conect col-4">
+              <p class="conec">CONNECT WITH US</p>
+              <div class="conec-icon">
+                <a href=""
+                  ><span><i class="fa-brands fa-facebook-f"></i></span
+                ></a>
+                <a href=""
+                  ><span><i class="fa-brands fa-twitter"></i></span
+                ></a>
+                <a href=""
+                  ><span><i class="fa-brands fa-youtube"></i></span
+                ></a>
+                <a href=""
+                  ><span><i class="fa-brands fa-instagram"></i></span
+                ></a>
+                <a href=""
+                  ><span><i class="fa-brands fa-tiktok"></i></span
+                ></a>
+              </div>
+            </div>
+            <div class="pay-ment col-8">
+              <div class="payment">
+                <p class="pay">PAYMENT METHODS</p>
+                <div class="icon-pay-ment">
+                  <a href=""
+                    ><span><i class="fa-brands fa-cc-mastercard"></i></span
+                  ></a>
+                  <a href=""
+                    ><span><i class="fa-brands fa-cc-visa"></i></span
+                  ></a>
+                  <a href=""
+                    ><span><i class="fa-solid fa-money-bill-transfer"></i></span
+                  ></a>
+                  <a href=""
+                    ><span><i class="fa-brands fa-cc-discover"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid 1x8 -->
+        <div class="container mt-5 pb-5">
+          <div class="grid-1x8">
+            <div class="grid-1x8-1">
+              <ul class="list-footer">
+                <li><a href="">Aca Joe</a></li>
+                <li><a href="">adidas</a></li>
+                <li><a href="">Bear</a></li>
+                <li><a href="">Birkenstock</a></li>
+                <li><a href="">Converse</a></li>
+              </ul>
+            </div>
+            <div class="grid-1x8-1">
+              <ul class="list-footer">
+                <li><a href="">Cotton On</a></li>
+                <li><a href="">Crosshatch</a></li>
+                <li><a href="">DeFacto</a></li>
+                <li><a href="">Footwork</a></li>
+                <li><a href="">Guess</a></li>
+              </ul>
+            </div>
+            <div class="grid-1x8-1">
+              <ul class="list-footer">
+                <li><a href="">Havaianas</a></li>
+                <li><a href="">ipanema</a></li>
+                <li><a href="">Jeep</a></li>
+                <li><a href="">Kangol</a></li>
+                <li><a href="">Levi's®</a></li>
+              </ul>
+            </div>
+            <div class="grid-1x8-1">
+              <ul class="list-footer">
+                <li><a href="">Madison</a></li>
+                <li><a href="">Miss Black</a></li>
+                <li><a href="">New Balance</a></li>
+                <li><a href="">Nike</a></li>
+              </ul>
+            </div>
+            <div class="grid-1x8-1">
+              <ul class="list-footer">
+                <li><a href="">Pick n Pay</a></li>
+                <li><a href="">Pierre Cardin</a></li>
+                <li><a href="">Plum</a></li>
+                <li><a href="">Polo</a></li>
+              </ul>
+            </div>
+            <div class="grid-1x8-1">
+              <ul class="list-footer">
+                <li><a href="">Puma</a></li>
+                <li><a href="">Reebok</a></li>
+                <li><a href="">Sheraton</a></li>
+                <li><a href="">Sissy Boy</a></li>
+              </ul>
+            </div>
+            <div class="grid-1x8-1">
+              <ul class="list-footer">
+                <li><a href="">Soviet</a></li>
+                <li><a href="">Steve Madden</a></li>
+                <li><a href="">Sunglass hut</a></li>
+                <li><a href="">Superdry</a></li>
+              </ul>
+            </div>
+            <div class="grid-1x8-1">
+              <ul class="list-footer">
+                <li><a href="">Superga</a></li>
+                <li><a href="">Urban</a></li>
+                <li><a href="">Utopia</a></li>
+                <li><a href="">Vans</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    var x = 0;
+    document.querySelector(".tog-gler").addEventListener("click", function () {
+      if (x == 0) {
+        document.getElementById("p").style.display = "none";
+        x = 1;
+      } else {
+        document.getElementById("p").style.display = "block";
+        x = 0;
+      }
+    });
+  </script>
+</html>
